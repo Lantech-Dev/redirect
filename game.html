@@ -73,7 +73,11 @@
 </body>
 <script>
   if (navigator.userAgent.toLowerCase().includes('android')) {
-    window.location.href = 'intent://app-lantech.netlify.app/#Intent;scheme=https;package=com.lantech.launcher;end';
+    // Получаем текущий путь и параметры
+    const currentPath = window.location.pathname + window.location.search;
+    // Формируем URL для Intent
+    const intentUrl = `intent://app-lantech.netlify.app${currentPath}#Intent;scheme=https;package=com.lantech.launcher;end`;
+    window.location.href = intentUrl;
   }
 </script>
 </html>
